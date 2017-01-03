@@ -84,8 +84,8 @@ void iir_2(const vector<double> &in, vector<double> &out, Biquad bq) {
   double y2 = bq.y2;
 
   for (unsigned int i = 0; i < in.size(); i++) {
-    out[i] = (bq.b0 * in[i]) + (bq.b1 * bq.x1) + (bq.b2 * bq.x2) -
-             (bq.a1 * bq.y1) - (bq.a2 * bq.y2);
+    out[i] = (bq.b0 * in[i]) + (bq.b1 * x1) + (bq.b2 * x2) - (bq.a1 * y1) -
+             (bq.a2 * y2);
 
     x2 = x1;
     x1 = in[i];
