@@ -17,7 +17,7 @@ DEPS := $(OBJS:.o=.d)
 INC_DIRS := ./src
 INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 
-CPPFLAGS ?= $(INC_FLAGS) -MMD -MP -march=$(MARCH) -Wall -O3
+CPPFLAGS ?= $(INC_FLAGS) -MMD -MP -march=$(MARCH) -Wall -pedantic -O3
 
 $(BUILD_DIR)/$(TARGET_EXEC): $(OBJS)
 	$(CXX) $(OBJS) -o $@ $(LDFLAGS)
